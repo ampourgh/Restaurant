@@ -1,0 +1,62 @@
+#app {
+  padding: 100px;
+}
+
+.form-control {
+  font-size: 2rem;
+  padding: 25px 15px;
+  float: left;
+  width: 25%;
+}
+
+.list-group-item {
+  float: left;
+  width: 25%;
+}
+
+.list-group-item:hover {
+  background: #ECECEC;
+}
+
+.banner {
+	background:url(../images/banner.jpg);
+	position:relative;
+	background-size: cover;
+}
+
+.main_banner_area {
+	padding: 300px 0;
+	overflow:hidden;
+}
+
+.logo {
+  height: 35%;
+  width: auto;
+  position:absolute;
+  top: 7%;
+	left: 7%;
+}
+
+.scrolldown {
+	padding-top: 24px;
+}
+
+.banner .scroll_btn {
+	background: url(../images/scroll.gif) 50% 50% no-repeat rgba(215, 181 ,94, 0);
+	border: 2px solid #fff;
+	border-radius: 50%;
+	display: block;
+	height: 45px;
+	margin: 42px auto;
+	transition: all 500ms ease-in-out 0s;
+	width: 45px;
+	position:absolute;
+	left:47%;
+	bottom:0;
+}
+
+.banner .scroll_btn:hover {
+	background: url(../images/scroll.gif) 50% 50% no-repeat #f3c30f;
+	opacity: .85;
+	transform: scale(1.1);
+}
