@@ -46,7 +46,7 @@ li a{
   font-family: 'Merriweather', serif;
   font-size: 25px;
   color: #fff;
-  border: #fff solid 5px;
+  border: rgba(200, 200, 200, .2) solid 4px;
   margin-left: 20px;
   text-transform: uppercase;
 }
@@ -57,7 +57,7 @@ li a{
 
 .main_menu_bg .navbar-nav>li>a:hover{
   color: #fff;
-  background: #000;
+  background: rgba(0, 0, 0, .2);
 }
 
 /* button */
@@ -67,12 +67,12 @@ li a{
   font-family: 'Merriweather', serif;
   font-size: 25px;
   color: #fff;
-  border: #fff solid 5px;
+  border: rgba(200, 200, 200, .2) solid 4px;
   margin-left: 20px;
   text-transform: uppercase;
 }
 
 .button:hover, .button:focus, .button:after {
   color: #fff;
-  background: #000;
+  background: rgba(0, 0, 0, .2);
 }
