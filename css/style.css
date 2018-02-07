@@ -1,17 +1,14 @@
-#app {
-  padding: 100px;
+.dropdown-menu {
+  width: 300px;
 }
 
-.form-control {
-  font-size: 2rem;
-  padding: 25px 15px;
-  float: left;
-  width: 25%;
+#app {
+  padding: 20px;
 }
 
 .list-group-item {
   float: left;
-  width: 25%;
+  width: 30%;
 }
 
 .list-group-item:hover {
@@ -75,4 +72,10 @@ li a{
 .button:hover, .button:focus, .button:after {
   color: #fff;
   background: rgba(0, 0, 0, .2);
+}
+
+.dropdown-content {
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
