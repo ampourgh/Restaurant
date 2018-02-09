@@ -1,7 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class something extends React.Component {
-	render() {
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { title: 'pizza' };
+  }
+	
+  render() {
+    return (
+      <h1>
+        {this.state.title}
+      </h1>
+    );
   }
 }
+
+ReactDOM.render(<App />, document.getElementById('app'))
