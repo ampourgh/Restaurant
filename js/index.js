@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
+const pizzas = [{name: 'Pepperoni', img: 'blank'},
+                {name: 'Mushrooms', img: 'blank'},
+                {name: 'Onions', img: 'blank'},
+                {name: 'Sausage', img: 'blank'},
+                {name: 'Bacon', img: 'blank'},
+                {name: 'Extra cheese', img: 'blank'},
+                {name: 'Black olives', img: 'blank'},
+                {name: 'Green peppers', img: 'blank'},
+                {name: 'Pineapple', img: 'blank'},
+                {name: 'Spinach', img: 'blank'}];
 
-  constructor(props) {
-    super(props);
-    this.state = { title: 'pizza' };
-  }
-	
-  render() {
-    return (
-      <h1>
-        {this.state.title}
-      </h1>
-    );
-  }
-}
+const pizzaList = pizzas.map((pizza, i) =>
+  <div>
+	 <div key={'pizza_' + i}>{pizza.name}</div>
+   <img src={pizza.img}
+        alt={pizza.name}/>
+  </div>
 
-ReactDOM.render(<App />, document.getElementById('app'))
+);
+
+// ReactDOM.render goes here:
+ReactDOM.render(<ul>{pizzaList}</ul>,
+		document.getElementById('app'))
