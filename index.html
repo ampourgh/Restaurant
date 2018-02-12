@@ -4,12 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Restaurant</title>
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
 </head>
 
 <body>
@@ -19,8 +25,7 @@
 
       <div class="single_banner_text">
 
-
-        </div>
+      </div>
 
         <a href="#" ><img src="./images/logo.png" class="logo"></img></a>
 
@@ -29,37 +34,33 @@
     </div>
   </section>
 
-		<div class="main_menu_bg navbar-fixed-top" data-wow-duration="1s">
-		   <div class="container">
-			    <div class="row">
-    	      <ul class="nav navbar-nav navbar-right">
-    					<li class="active"><a href="#home">Home</a></li>
-              <li>
-                <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Menu
-                  <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <section id="search-filter">
-                          <li><div id="app"></div></li>
-                        </section>
-                    </ul>
-                </div>
-              </li>
-    					<li><a href="#special">PICTURES</a></li>
-    					<li><a href="#abouts">ABOUT</a></li>
-    					<li><a href="#footer">FAQ</a></li>
-    			  </ul>
-			    </div>
-		   </div>
-		</div>
-	</header>
-
-  <script src='js/react/react.min.js'></script>
-
-  <script src='js/react/react-dom.js'></script>
-
-  <script  src="js/index.js"></script>
-
+  <div class="main_menu_bg navbar-fixed-top">
+    <div class="container">
+      <div class="row">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="dropdown">
+              <button class="button dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <section id="search-filter">
+                  hello
+                  <div id="app"></div>
+                  <script src="app.js"></script>
+                </section>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#special">Pictures</a></li>
+          <li><a href="#abouts">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="/bundle.js"></script>
+  <script  src="src/index.js"></script>
+  
 </body>
 
 </html>
