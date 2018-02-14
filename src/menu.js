@@ -1,6 +1,8 @@
 import React from 'react';
 import Item from './Item';
 
+
+
 class Menu extends React.Component {
   constructor() {
     super();
@@ -35,6 +37,7 @@ class Menu extends React.Component {
 
     return (
       <div>
+        <img src="../images/search-icon.png"></img>
         <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
         <ul>
           {filteredItems.map((item)=> {
