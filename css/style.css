@@ -1,17 +1,75 @@
+h1, h2, h3, h4, h5, h6, p {
+  color: #000;
+}
+
+h1 {
+
+}
+
 .dropdown-menu {
-  width: 300px;
+  width: 625px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  border-right: 1px dashed black;
+}
+
+.margin-left {
+  margin-left: 15%;
+}
+
+ .font-weight {
+   font-weight: bold;
+ }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.no-dash {
+  border-right: none;
+}
+
+.pizza-icon {
+  height: 250px;
+  width: auto;
 }
 
 #app {
-  padding: 20px;
+  border: 0;
+  width: 99%;
 }
 
-.list-group-item {
+.list-group-item h1 {
+  margin-left: 6%;
+  margin-bottom: 20px;
+}
+
+.list-group-item img {
+  margin-left: 5%;
+  height: 20px;
+  width: auto;
+}
+
+.list-group-item input {
+  margin-left: 2%;
+  margin-bottom: 20px;
+}
+
+.list-group-item li {
+  list-style: none;
+  border: 1px solid #ECECEC;
+  line-height: 2;
+  background: #fff;
   float: left;
-  width: 30%;
+  width: 50%;
 }
 
-.list-group-item:hover {
+.list-group-item li:hover {
   background: #ECECEC;
 }
 
