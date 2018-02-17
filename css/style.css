@@ -2,10 +2,6 @@ h1, h2, h3, h4, h5, h6, p {
   color: #000;
 }
 
-h1 {
-
-}
-
 .dropdown-menu {
   width: 625px;
 }
@@ -113,6 +109,34 @@ li a{
 .main_menu_bg .navbar-nav>li>a:hover{
   color: #fff;
   background: rgba(0, 0, 0, .2);
+}
+
+
+
+/* flexbox for images */
+
+
+.flex-container {
+   display: -webkit-flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.flex-row {
+	width: 25%;
+	padding: 20px;
+	text-align: center;
+	line-height: 60%;
+
+}
+
+.flex-row .image {
+		height: 7.5em;
+		width: auto;
+}
+
+.flex-row h3 {
+  font-size: 1em;
 }
 
 /* button */
