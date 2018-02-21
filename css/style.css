@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 20px;
 }
 
-.list-group-item img {
+.search-icon {
   margin-left: 5%;
   height: 20px;
   width: auto;
@@ -58,6 +58,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 .list-group-item li {
   list-style: none;
+  line-height: 2;
+  background: #fff;
+  float: left;
+  width: 25%;
+}
+
+.list-group-item2 li {
+  list-style: none;
   border: 1px solid #ECECEC;
   line-height: 2;
   background: #fff;
@@ -65,12 +73,12 @@ h1, h2, h3, h4, h5, h6, p {
   width: 50%;
 }
 
-.list-group-item li:hover {
+.list-group-item2 li:hover {
   background: #ECECEC;
 }
 
 .banner {
-	background:url(../images/banner.jpg);
+	background: url(../images/banner.jpg);
 	position:relative;
 	background-size: cover;
 }
@@ -111,10 +119,53 @@ li a{
   background: rgba(0, 0, 0, .2);
 }
 
+/* Contacts */
+
+.Contacts {
+	width: 100%;
+}
+
+.Contacts i {
+	background-color: #000;
+	color: #fff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.Contacts i {
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.Contacts p {
+	display: inline-block;
+	color: #000;
+	vertical-align: middle;
+	margin:0;
+}
+
+.Contacts p span {
+	display: block;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+
+.Contacts p a {
+  margin-left: 0;
+	color: #000;
+  font-size: 14px;
+	text-decoration: none;
+}
 
 
 /* flexbox for images */
-
 
 .flex-container {
    display: -webkit-flex;
