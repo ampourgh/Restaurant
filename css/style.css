@@ -2,8 +2,29 @@ h1, h2, h3, h4, h5, h6, p {
   color: #000;
 }
 
+body {
+  background-color: #000;
+}
+
+footer {
+  background-color: #000;
+}
+
+/* Dropdown widths */
+
 .dropdown-menu {
-  width: 625px;
+}
+
+.dropdown-width-menu {
+    width: 625px;
+}
+
+.dropdown-width-pictures {
+  width: 600px;
+}
+
+.dropdown-width-contacts {
+  width: 315px;
 }
 
 .column {
@@ -175,15 +196,15 @@ li a{
 
 .flex-row {
 	width: 25%;
-	padding: 20px;
-	text-align: center;
+	padding: 1px;
+	text-align: left;
 	line-height: 60%;
 
 }
 
 .flex-row .image {
-		height: 7.5em;
-		width: auto;
+		height: 8em;
+		width: 8em;
 }
 
 .flex-row h3 {
