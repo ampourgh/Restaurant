@@ -39,11 +39,13 @@ class Menu extends React.Component {
       <div>
         <img className="search-icon" src="../images/search-icon.png"></img>
         <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
-        <ul>
-          {filteredItems.map((item)=> {
-              return <Item item={item} key={item.id}/>
-          })}
-        </ul>
+        <nav id="thisNav">
+          <ul>
+            {filteredItems.map((item)=> {
+                return <Item item={item} key={item.id}/>
+            })}
+          </ul>
+        </nav>
       </div>
     )
 

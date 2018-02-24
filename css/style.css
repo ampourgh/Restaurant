@@ -84,7 +84,7 @@ footer a:hover {
   width: 600px;
   float:left;
   overflow-y: auto;
-  height: 400px;
+  height: 500px;
 }
 
 .dropdown-width-contacts {
@@ -95,6 +95,11 @@ footer a:hover {
   float: left;
   width: 50%;
   border-right: 1px dashed black;
+}
+
+.column-pictures {
+  float: left;
+  width: 50%;
 }
 
 .margin-left {
@@ -137,8 +142,8 @@ footer a:hover {
 }
 
 .list-group-item input {
-  margin-left: 2%;
-  margin-bottom: 20px;
+  margin: 0 0 20px 5%;
+  width: 160px;
 }
 
 .list-group-item li {
@@ -252,6 +257,19 @@ li a{
 
 /* flexbox for images */
 
+#app div nav {
+  position: relative;
+}
+
+#app div nav ul div li div img {
+  position: absolute;
+  top: -325px;
+  left: 200px;
+  width: 500px;
+  height: 500px;
+  clip: rect(0px,16em,32em,0px);
+}
+
 .flex-container {
    display: -webkit-flex;
    flex-direction: row;
@@ -260,18 +278,17 @@ li a{
 
 .flex-row {
 	width: 25%;
-	padding: 1px;
+  padding: 0 3px;
 	text-align: left;
 	line-height: 60%;
-
 }
 
 .flex-row .image {
-		height: 8em;
-		width: 8em;
+  position: relative;
+  left: -38px;
+	height: 15em;
+	width: 15em;
 }
-
-
 
 .flex-row h3 {
   font-size: 1em;
@@ -298,8 +315,4 @@ li a{
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
-
-.dropdown-image {
-
 }

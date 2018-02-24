@@ -9,7 +9,7 @@ class Item extends React.Component {
           <li className="flex-row">
             <img className="image" src={menuItem.img} />
             <div className="w3-dropdown-content">
-              <img className="dropdown-image" src={menuItem.img} />
+              <img src={menuItem.img} />
             </div>
           </li>
 
