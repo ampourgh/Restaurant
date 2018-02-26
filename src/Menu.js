@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import Item2 from './Item2';
 
 class Menu extends React.Component {
   constructor() {
@@ -39,16 +40,26 @@ class Menu extends React.Component {
       <div>
         <img className="search-icon" src="../images/search-icon.png"></img>
         <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
-        <nav id="thisNav">
-          <ul>
+        <div id="demo" className="carousel slide" data-ride="carousel">
+          <ul className="carousel-indicators">
+            {filteredItems.map((item)=> {
+                return <Item2 item={item} key={item.id}/>
+            })}
+          </ul>
+          <div className="carousel-inner">
             {filteredItems.map((item)=> {
                 return <Item item={item} key={item.id}/>
             })}
-          </ul>
-        </nav>
+          </div>
+          <a className="carousel-control-prev" href="#demo" data-slide="prev">
+            <span className="carousel-control-prev-icon"></span>
+          </a>
+          <a className="carousel-control-next" href="#demo" data-slide="next">
+            <span className="carousel-control-next-icon"></span>
+          </a>
+        </div>
       </div>
     )
-
   }
 }
 
