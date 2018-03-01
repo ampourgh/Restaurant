@@ -31,3 +31,16 @@ npm install
 npm start
 ```
 * The webpacks from the React library will be initialized, followed by the statement 'webpack: Compiled successfully.', navigate to http://localhost:8080/ on a browser.
+
+### How to Modify Content
+
+#### Toppings List 
+
+Within the render() function of /src/PizzaList.js, the const var pizzas contains the list of toppings that is presented on the Menu dropdown of the site. The list contains the unique identifier of id, the name of the topping and price. The const variable pizzaList contains the JSX that is exported to the class PizzaDisplay in index.js. It also should be noted that the className variable in the JSX div is the equivalent of class in HTML. Also, the 'map' syntax is the equivalent of foreach or any other JavaScript for loop, iterating on all toppings that would be placed on the unordered list.
+
+#### Picture Gallery
+
+For the image gallery, the set up is fairly similar, but with the added layering for the search state, which is used to create what the search defaults on and how the list is manipulated. In the render functon of Menu.js, within the JSX ul tags there map syntax that iterates in another file called Item.js, which contains the images. 
+
+### Acknowledgments
+Used tutorials from Udemy's React tutorial on how to use the YouTube API to filter videos, w3schools for CSS features such as the dropdown menu and footer design features, royalty free images for the visual content on the webpage, along with royalty free Restaurant websites to get an idea of design decisions to create a restaurant.
