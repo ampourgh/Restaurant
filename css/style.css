@@ -97,11 +97,6 @@ footer a:hover {
   border-right: 1px dashed black;
 }
 
-.column-pictures {
-  float: left;
-  width: 50%;
-}
-
 .margin-left {
   margin-left: 15%;
 }
@@ -142,8 +137,8 @@ footer a:hover {
 }
 
 .list-group-item input {
-  margin: 0 0 20px 5%;
-  width: 160px;
+  margin-left: 2%;
+  margin-bottom: 20px;
 }
 
 .list-group-item li {
@@ -257,19 +252,6 @@ li a{
 
 /* flexbox for images */
 
-#app div nav {
-  position: relative;
-}
-
-#app div nav ul div li div img {
-  position: absolute;
-  top: -325px;
-  left: 200px;
-  width: 500px;
-  height: 500px;
-  clip: rect(0px,16em,32em,0px);
-}
-
 .flex-container {
    display: -webkit-flex;
    flex-direction: row;
@@ -277,17 +259,16 @@ li a{
 }
 
 .flex-row {
-	width: 25%;
-  padding: 0 3px;
+	width:  25%;
 	text-align: left;
 	line-height: 60%;
 }
 
 .flex-row .image {
-  position: relative;
-  left: -38px;
-	height: 15em;
-	width: 15em;
+		height: 10em;
+		width: 10em;
+    position: relative;
+    left: -20px;
 }
 
 .flex-row h3 {
@@ -315,4 +296,32 @@ li a{
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+@media only screen and (max-width: 770px) {
+  .container {
+    visibility: hidden;
+  }
+
+  .banner {
+    background: url(../images/banner-mobile.jpg);
+    background-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+
+  .banner {
+    background: url(../images/banner-mobile.jpg);
+  }
+  .logo {
+    position: relative;
+    top: -200px;
+    left: 0;
+    width: 250px;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

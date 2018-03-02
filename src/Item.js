@@ -5,14 +5,9 @@ class Item extends React.Component {
     const menuItem = this.props.item;
     return (
 
-      <div className="carousel-item">
-        <div>
-            <img src={menuItem.img} width="1100" height="500" />
-        </div>
-        <div className="carousel-caption">
-          <h3>{menuItem.name}</h3>
-        </div>
-      </div>
+      <li className="flex-row">
+        <img className="image" src={menuItem.img}  />
+      </li>
     )
   }
 }
