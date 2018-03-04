@@ -337,6 +337,11 @@ li a{
     margin-right: auto;
   }
 
+  .carousel-indicators{
+     top: 0px;
+     border-radius: 0;
+  }
+
   .btwn-section-1, .btwn-section-2, .btwn-section-3 {
     display: block;
     background-color: tomato;
