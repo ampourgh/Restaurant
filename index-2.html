@@ -17,13 +17,6 @@
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- REACT LIBRARY -->
-    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
-    <!-- REACT DOM LIBRARY -->
-    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
-    <!-- BABEL LIBRARY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
-
 
 </head>
 
@@ -59,18 +52,12 @@
                     <div class="font-weight">size:</div><br>
                     <div class="font-weight">Small</div> (10") ... 4.99<br>
                     <div class="font-weight">Medium</div> (12") ... 5.99<br>
-                    <div class="font-weight">Large</div> (14") ... 6.99<br>
-
-                    <img class="pizza-icon" src ="./images/pizza-icon.png">
-
+                    <div class="font-weight">Large</div> (14") ... 6.99
+                    <img class="pizza-icon" src ="../images/pizza-icon.png">
                   </div>
                 </div>
                 <div class="column no-dash list-group-item">
-                  <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
-                  <div id="filter-options">Not rendered.</div>
-
-                  <!-- <div id="app2" class="list-group-item2"></div> -->
-
+                  <div id="app2" class="list-group-item2"></div>
                 </div>
               </ul>
             </div>
@@ -82,10 +69,8 @@
               <ul class="dropdown-menu dropdown-width-pictures">
                 <div class="">
                   <section class="flex-container images-margin">
-
-                    <!-- <div id="app" class="list-group-item"></div> -->
-
-                  </section>
+                    <div id="app" class="list-group-item"></div>
+              		</section>
                 </div>
               </ul>
             </div>
@@ -244,66 +229,5 @@
   <div class="bottom-div">
   </div>
 </footer>
-
-
-<!-- JAVASCRIPT -->
-<script type="text/babel">
-
-  class NameForm extends React.Component {
-
-    constructor(props) {
-
-      super(props);
-
-      this.state = {
-        value: ''
-      };
-
-      this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-      this.setState({
-        value: event.target.value
-      });
-
-      if (event.target.value === 'this') {
-        var ns12 = <p>thisads</p>
-      }
-    }
-
-
-    render() {
-      return(
-
-        <div>
-          {ns12}
-
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange}/>
-          </label>
-
-          <p>{this.state.value}</p>
-
-        </div>
-
-      );
-
-    }
-
-  }
-
-  ReactDOM.render(
-
-    <
-      NameForm
-    />,
-
-    document.getElementById("filter-options")
-
-  );
-
-</script>
 
 </html>
