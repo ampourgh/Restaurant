@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.28.1/react-bootstrap.min.js'></script>
+
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- REACT LIBRARY -->
@@ -65,7 +68,7 @@
                 </div>
                 <div class="column no-dash list-group-item">
                   <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
-                  <div id="filter-options">Not rendered.</div>
+                  <div id="filter-options" class="list-group-item2">Not rendered.</div>
 
                   <!-- <div id="app2" class="list-group-item2"></div> -->
 
@@ -81,7 +84,7 @@
                 <div class="">
                   <section class="flex-container images-margin">
 
-                    <!-- <div id="app" class="list-group-item"></div> -->
+                    <div id="app" class="list-group-item">Not rendered.</div>
 
                   </section>
                 </div>
@@ -239,57 +242,137 @@
 <!-- JAVASCRIPT -->
 <script type="text/babel">
 
-  class NameForm extends React.Component {
+class PizzaClass extends React.Component {
+  render() {
 
-    constructor(props) {
+    const pizzas = [
+                      {id: 1, name: 'Pepperoni', price: '.99'},
+                      {id: 2, name: 'Mushrooms', price: '.49'},
+                      {id: 3, name: 'Onions', price: '.49'},
+                      {id: 4, name: 'Sausage', price: '.99'},
+                      {id: 5, name: 'Bacon', price: '.99'},
+                      {id: 6, name: 'Extra cheese', price: '.49'},
+                      {id: 7, name: 'Black olives', price: '.49'},
+                      {id: 8, name: 'Green peppers', price: '.49'},
+                      {id: 9, name: 'Pineapple', price: '.49'},
+                      {id: 10, name: 'Spinach', price: '.49'}
+                    ];
 
-      super(props);
+    const pizzaList = pizzas.map((pizza, i) => {
+      return (
+        <li>
+          <div className="font-weight">{pizza.name}</div>
+          <div>{pizza.price}</div>
+        </li>
+      )
+    });
 
-      console.log(this.props);
-
-      this.state = {
-        value: ''
-      };
-
-      this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-      this.setState({
-        value: event.target.value
-      });
-    }
+    return <nav>{pizzaList}</nav>;
+  }
+}
 
 
-    render() {
-      return(
+const Item = React.createClass({
 
-        <div>
 
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange}/>
-          </label>
+  getInitialState() {
+    return { showModal: false };
+  },
 
-          <p>{this.state.value}</p>
+  close() {
+    this.setState({ showModal: false });
+  },
 
-        </div>
+  open() {
+    this.setState({ showModal: true });
+  },
 
-      );
+  render() {
+    const menuItem = this.props.item;
+    return (
+      <div>
+        <li className="flex-row">
+            this
+          <img className="image" src={menuItem.img} />
+        </li>
 
-    }
+      </div>
 
+    );
+  }
+});
+
+class Menu extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      search: ''
+    };
   }
 
-  ReactDOM.render(
+  updateSearch(event) {
+    this.setState({search: event.target.value.substr(0, 20)});
+  }
 
-    <
-      NameForm
-    />,
+  render() {
+    const menuItems = [
+                      {id: 1, name: 'Pepperoni', price: '.99', img: './images/pictures/1.jpg'},
+                      {id: 2, name: 'Mushrooms', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 3, name: 'Onions', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 4, name: 'Sausage', price: '.99', img: './images/pictures/1.jpg'},
+                      {id: 5, name: 'Bacon', price: '.99', img: './images/pictures/1.jpg'},
+                      {id: 6, name: 'Extra cheese', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 7, name: 'Black olives', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 8, name: 'Green peppers', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 9, name: 'Pineapple', price: '.49', img: './images/pictures/1.jpg'},
+                      {id: 10, name: 'Spinach', price: '.49', img: './images/pictures/1.jpg'}
+                    ];
 
-    document.getElementById("filter-options")
+    let filteredItems = menuItems.filter(
+      (item) => {
+        return item.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+      }
+    );
 
-  );
+    return (
+      <div>
+        <img className="search-icon" src="../images/search-icon.png"></img>
+        <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+        <ul>
+          {filteredItems.map((item)=> {
+              return <Item item={item} key={item.id}/>
+          })}
+        </ul>
+      </div>
+    )
+
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>Search for images of food with keywords</p>
+        <Menu />
+      </div>
+    )
+  }
+}
+
+class PizzaDisplay extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Toppings</h1>
+        <PizzaClass />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<PizzaDisplay />, document.getElementById('filter-options'))
+ReactDOM.render(<App />, document.getElementById('app'));
 
 </script>
 
