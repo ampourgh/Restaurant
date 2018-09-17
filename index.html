@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- REACT LIBRARY -->
@@ -57,10 +56,8 @@
                   <div class="margin-left">
                     <br>
                     <h1>Pizza</h1>
-                    <div class="font-weight">size:</div><br>
-                    <div class="font-weight">Small</div> (10") ... 4.99<br>
-                    <div class="font-weight">Medium</div> (12") ... 5.99<br>
-                    <div class="font-weight">Large</div> (14") ... 6.99<br>
+
+                    <div id="pizza-size-listing">Not rendered.</div>
 
                     <img class="pizza-icon" src ="./images/pizza-icon.png">
 
@@ -84,7 +81,7 @@
                 <div class="">
                   <section class="flex-container images-margin">
 
-                    <div id="app" class="list-group-item">Not rendered.</div>
+                    <div id="toppings-listing" class="list-group-item toppings-listing">Not rendered.</div>
 
                   </section>
                 </div>
@@ -255,7 +252,7 @@
         }
       ).map((pizza) => {
         return (
-          <li>
+          <li key={pizza.id}>
             <div className="font-weight">{pizza.name}</div>
             <div>{pizza.price}</div>
           </li>
@@ -266,6 +263,26 @@
     }
   }
 
+  class PizzaSizingClass extends React.Component {
+
+    constructor(props) {
+      super(props);
+    }
+
+    render() {
+
+      const pizzaSizingList = this.props.menuSizes.map((pizza) => {
+        return (
+          <li key={pizza.id}>
+            <div className="font-weight">{pizza.size}</div>
+            <div>({pizza.technicalSize}) ... {pizza.price}</div>
+          </li>
+        )
+      });
+
+      return <nav>{pizzaSizingList}</nav>;
+    }
+  }
 
   const Item = React.createClass({
 
@@ -346,7 +363,13 @@
     {id: 10, name: 'Spinach', price: '.49', img: './images/pictures/pizza5.jpg', isMenuItem: true}
   ];
 
-  class App extends React.Component {
+  const menuSizes = [
+    {id: 1, size: 'Small', technicalSize: '10"', price: '$4.99'},
+    {id: 2, size: 'Medium', technicalSize: '12"', price: '$5.99'},
+    {id: 3, size: 'Large', technicalSize: '14"', price: '$6.99'}
+  ];
+
+  class ToppingsDisplay extends React.Component {
     render() {
       return (
         <div>
@@ -368,8 +391,20 @@
     }
   }
 
-  ReactDOM.render(<PizzaDisplay />, document.getElementById('filter-options'))
-  ReactDOM.render(<App />, document.getElementById('app'));
+  class PizzaSizePrice extends React.Component {
+    render() {
+      return (
+        <div>
+          <h2>Size:</h2>
+          <PizzaSizingClass menuSizes={menuSizes}/>
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(<PizzaSizePrice />, document.getElementById('pizza-size-listing'));
+  ReactDOM.render(<PizzaDisplay />, document.getElementById('filter-options'));
+  ReactDOM.render(<ToppingsDisplay />, document.getElementById('toppings-listing'));
 
 </script>
 
