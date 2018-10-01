@@ -1,14 +1,15 @@
-html {
-  height: 100%;
-}
-
 h1, h2, h3, h4, h5, h6, p {
   color: #000;
 }
 
 body {
-  min-height: 100%;
   background-color: #000;
+}
+
+.encompass {
+	height: 80vh;
+	margin: 0;
+	padding: 0;
 }
 
 .btwn-section-1, .btwn-section-2, .btwn-section-3  {
@@ -17,7 +18,7 @@ body {
 
 footer {
   text-align: justify;
-  height: 100px;
+  height: 20vh;
   background-color: #000;
 }
 
@@ -175,6 +176,7 @@ footer a:hover {
 	background: url(../images/banner.jpg);
 	position:relative;
 	background-size: cover;
+	height: 80vh;
 }
 
 .main_banner_area {
@@ -308,6 +310,12 @@ li a{
 }
 
 @media only screen and (max-width: 770px) {
+  .encompass {
+    height: 100%;
+  }
+  footer {
+    height: 100%;
+  }
   .container {
     visibility: hidden;
   }
